@@ -1,0 +1,17 @@
+{
+  "name": "bus-service",
+  "version": "1.0.0",
+  "description": "A rest API based project with sequelize and mvc pattern",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx nodemon src/index.js"
+  },
+  "author": "shahid",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.1.3",
+    "express": "^4.18.2",
+    "http-status-code": "^2.1.0",
+    "nodemon": "^2.0.22"
+  }
+}
