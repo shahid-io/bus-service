@@ -27,3 +27,16 @@ setup PORT > src/config/index.js
         `const { PORT } = require("./config");`
         
         Now you can use PORT in our src/index.js file 
+
+
+
+Bus properties:
+1. Bus Number: A unique identifier or number assigned to the bus.
+2. Make: The make or manufacturer of the bus (e.g., Volvo, Scania, Mercedes-Benz).
+3. Model: The specific model of the bus (e.g., A-Series, B-Series, C-Series).
+4. Capacity: The maximum seating capacity of the bus.
+5. Fuel Type: The type of fuel the bus uses (e.g., diesel, gasoline, electric).
+6. Registration Number: The official registration number assigned to the bus.
+7. License Plate: The license plate number of the bus.
+8. Color: The color or livery of the bus.
+9. Bus Type: The type of bus (e.g., standard, luxury, sleeper).
