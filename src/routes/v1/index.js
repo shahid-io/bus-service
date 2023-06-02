@@ -1,11 +1,10 @@
 const express = require("express");
-const { BusController } = require("../../controllers");
+const busRoutes = require("./bus-routes");
+
 const router = express.Router();
 
-router.get("/info", (req, res) => {
-  return res.status(200).json({ msg: "Ok" });
-});
+console.log("3.-----from routes/v1/index.js");
 
-router.post("/bus", BusController.createBus);
+router.use("/bus", busRoutes);
 
-module.exports = {router};
+module.exports = router;

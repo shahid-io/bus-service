@@ -4,6 +4,7 @@ class CrudRepository {
   }
 
   async create(data) {
+    console.log("3.-----from CrudRepository");
     const response = await this.model.create(data);
     return response;
   }
@@ -23,8 +24,13 @@ class CrudRepository {
   }
 
   async getAll() {
-    const response = await this.model.findAll();
-    return response;
+    try {
+      const response = await this.model.findAll();
+      console.log("-----------getAll----------");
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
   }
   async update(data, id) {
     const response = await this.model.update(data, { where: { id: id } });
@@ -32,4 +38,4 @@ class CrudRepository {
   }
 }
 
-module.exports = { CrudRepository };
+module.exports = CrudRepository;
