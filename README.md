@@ -61,4 +61,29 @@ npx sequelize model:generate --name bus --attributes busNumber:string,manufactur
 "color": "RED",
 "busType": "standard"
 }
+npx sequelize model:create --name Bus --attributes busNumber:string,manufacturer:string,model:string,capacity:integer,fuelType:string,registrationNumber:integer,licensePlate:string,color:string,busType:string
+```
+
+`Route Table Design`
+Table: Routes
+| Column | Data Type |
+| RouteId | int (pk) |
+| RouteNumber | varchar |
+| StartPoint | varchar |
+| EndPoint | varchar |
+| Distance | float |
+| Duration | time, int |
+| Frequency | int |
+
+```
+{
+    "routeId": "AL101",
+    "routeNumber": "101",
+    "startPoint": "Allepy",
+    "endPoint": "Pullincunno",
+    "distance": "30KM",
+    "duration": "01:00:00",
+    "frequency": "10"
+}
+npx sequelize model:create --name Route --attributes routeId:string,routeNumber:integer,startPoint:string,endPoint:string,distance:string,duration:time,frequency:integer
 ```

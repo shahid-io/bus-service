@@ -11,10 +11,39 @@ module.exports = {
       },
       busNumber: {
         type: Sequelize.STRING,
+        allowNull: false,
       },
-      busCapacity: {
+      manufacturer: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      model: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      capacity: {
         type: Sequelize.INTEGER,
-        defaultValue: 0,
+        allowNull: false,
+      },
+      fuelType: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      registrationNumber: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      licensePlate: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      color: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      busType: {
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,

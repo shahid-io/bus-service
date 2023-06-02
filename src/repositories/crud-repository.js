@@ -24,14 +24,10 @@ class CrudRepository {
   }
 
   async getAll() {
-    try {
-      const response = await this.model.findAll();
-      console.log("-----------getAll----------");
-      return response;
-    } catch (error) {
-      console.log(error);
-    }
+    const response = await this.model.findAll();
+    return response;
   }
+  
   async update(data, id) {
     const response = await this.model.update(data, { where: { id: id } });
     return response;

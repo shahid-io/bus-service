@@ -1,0 +1,26 @@
+const { RouteRepository } = require("../repositories");
+
+const routeRepository = new RouteRepository();
+
+async function createRoute(data) {
+  try {
+    const route = await routeRepository.create(data);
+    return route;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function getRoute() {
+  try {
+    const route = await routeRepository.getAll();
+    return route;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+module.exports = {
+  createRoute,
+  getRoute,
+};

@@ -1,7 +1,7 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class Bus extends Model {
+  class Route extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -11,53 +11,40 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  Bus.init(
+  Route.init(
     {
-      busNumber: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      manufacturer: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        defaultValue: "Volvo",
-      },
-      model: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      capacity: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        defaultValue: 0,
-      },
-      fuelType: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        defaultValue: "Diesel",
-      },
-      registrationNumber: {
+      routeId: { type: DataTypes.STRING },
+      routeNumber: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      licensePlate: {
+      startPoint: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      color: {
+      endPoint: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      busType: {
+      distance: {
         type: DataTypes.STRING,
         allowNull: false,
-        defaultValue: "standard",
+      },
+      duration: {
+        type: DataTypes.TIME,
+        allowNull: false,
+        defaultValue: "00:00:00",
+      },
+      frequency: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 1,
       },
     },
     {
       sequelize,
-      modelName: "Bus",
+      modelName: "Route",
     }
   );
-  return Bus;
+  return Route;
 };
