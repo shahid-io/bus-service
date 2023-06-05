@@ -88,3 +88,13 @@ Table: Routes
 }
 npx sequelize model:create --name Route --attributes routeId:string,routeNumber:integer,startPoint:string,endPoint:string,distance:string,duration:time,frequency:integer
 ```
+### Add migration to add FOREIGN KEY to Bus Model.
+
+```
+    npx sequelize migration:generate --name update-buses-rutes-association 
+```
+after some changes in model and migration do migrate db.
+
+```
+npx sequelize db:migrate
+```

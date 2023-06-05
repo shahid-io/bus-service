@@ -2,41 +2,57 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("Routes", {
+    await queryInterface.createTable("Buses", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
+      busNumber: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       routeId: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      routeNumber: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      startPoint: {
+      manufacturer: {
         type: Sequelize.STRING,
         allowNull: false,
+        defaultValue: "Volvo"
       },
-      endPoint: {
+      model: {
         type: Sequelize.STRING,
         allowNull: false,
+        defaultValue: "V222",
       },
-      distance: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      duration: {
-        type: Sequelize.TIME,
-        allowNull: false,
-        defaultValue: "00:00:00",
-      },
-      frequency: {
+      capacity: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        defaultValue: 50,
+      },
+      fuelType: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        defaultValue: "Diesel",
+      },
+      registrationNumber: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      licensePlate: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      color: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      busType: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        defaultValue: "standard",
       },
       createdAt: {
         allowNull: false,
@@ -49,6 +65,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("Routes");
+    await queryInterface.dropTable("Buses");
   },
 };

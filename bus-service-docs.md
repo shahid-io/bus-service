@@ -40,3 +40,45 @@ Manage Bus Occupancy and Seats:
 GET /buses/{busId}/occupancy: Get information about the occupancy of a specific bus.
 POST /buses/{busId}/seats: Reserve a seat on a specific bus.
 These are just examples, and you can customize the operations based on your specific bus management requirements. Remember to follow RESTful principles and include appropriate authentication and error handling mechanisms for secure and reliable API operations.
+
+
+
+
+
+
+"use strict";
+
+const { QueryInterface } = require("sequelize");
+
+/** @type {import('sequelize-cli').Migration} */
+module.exports = {
+  async up(queryInterface, Sequelize) {
+    /**
+     * Add altering commands here.
+     *
+     * Example:
+     * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
+     */
+    await queryInterface.addConstraint("Buses", {
+      type: "foreign key",
+      name: "route_fkey_constraints",
+      fields: ["routeId"],
+      references: {
+        table: "Routes",
+        field: "id",
+      },
+      onUpdate: "cascade",
+      onDelete: "CASCADE",
+    });
+  },
+
+  async down(queryInterface, Sequelize) {
+    await queryInterface.removeConstraint("Buses", "route_fkey_constraints");
+    /**
+     * Add reverting commands here.
+     *
+     * Example:
+     * await queryInterface.dropTable('users');
+     */
+  },
+};

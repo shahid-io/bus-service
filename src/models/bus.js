@@ -9,6 +9,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.belongsTo(models.Route, {
+        foreignKey: "routeId",
+        onDelete: "cascade",
+        onUpdate: "cascade",
+      });
     }
   }
   Bus.init(

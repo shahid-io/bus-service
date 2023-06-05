@@ -9,14 +9,23 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.hasMany(models.Bus, {
+        foreignKey: "routeId",
+        onDelete: "cascade",
+        onUpdate: "cascade",
+      });
     }
   }
   Route.init(
     {
-      routeId: { type: DataTypes.STRING },
-      routeNumber: {
+      routeId: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        primaryKey: true,
+        autoIncrement: true,
+      },
+      routeNumber: {
+        type: DataTypes.INTEGER,
       },
       startPoint: {
         type: DataTypes.STRING,
