@@ -20,7 +20,17 @@ async function getRoute() {
   }
 }
 
+async function getRouteById(id) {
+  try {
+    const route = await routeRepository.get(id);
+    return route;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 module.exports = {
   createRoute,
   getRoute,
+  getRouteById,
 };

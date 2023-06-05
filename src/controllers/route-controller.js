@@ -47,7 +47,26 @@ async function getAllRoute(req, res) {
   }
 }
 
+async function getRouteById(req, res) {
+  try {
+    const route = await RouteService.getRouteById(req.params.id);
+    res.status(StatusCodes.OK).json({
+      success: true,
+      message: `Successfully fetched Route with id : ${req.params.id}`,
+      data: route,
+      error: {},
+    });
+  } catch (error) {
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+      success: false,
+      message: `Something went wrong while fetching route with id : ${req.params.id}`,
+      data: {},
+      error: error,
+    });
+  }
+}
 module.exports = {
   createRoute,
   getAllRoute,
+  getRouteById,
 };

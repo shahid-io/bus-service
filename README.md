@@ -52,6 +52,7 @@ npx sequelize model:generate --name bus --attributes busNumber:string,manufactur
 ```
 {
 "busNumber": "KSRTC A111",
+"routeId": 121,
 "manufacturer": "Volvo",
 "model": "V222",
 "capacity": "100",
@@ -61,7 +62,7 @@ npx sequelize model:generate --name bus --attributes busNumber:string,manufactur
 "color": "RED",
 "busType": "standard"
 }
-npx sequelize model:create --name Bus --attributes busNumber:string,manufacturer:string,model:string,capacity:integer,fuelType:string,registrationNumber:integer,licensePlate:string,color:string,busType:string
+npx sequelize model:create --name Bus --attributes busNumber:string,routeId:integer,manufacturer:string,model:string,capacity:integer,fuelType:string,registrationNumber:integer,licensePlate:string,color:string,busType:string
 ```
 
 `Route Table Design`
