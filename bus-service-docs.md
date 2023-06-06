@@ -1,8 +1,8 @@
 In terms of bus management, the REST API operations typically involve performing various tasks related to managing buses, routes, schedules, and other aspects of the bus service. Here are some common REST API operations you can include:
 
 Retrieve Bus Information:
-# Manage Bus
-GET /buses: Get a list of all buses.
+# Manage Bus<br>
+GET /buses: Get a list of all buses.<br>
 GET /buses/{busId}: Get detailed information about a specific bus.
 Create, Update, and Delete Buses:
 POST /buses: Create a new bus.
