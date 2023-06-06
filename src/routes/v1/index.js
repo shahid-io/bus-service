@@ -6,7 +6,7 @@ const router = express.Router();
 
 console.log("3.-----from routes/v1/index.js");
 
-router.use("/bus", busRoutes);
+router.use("/buses", busRoutes);
 
 router.use("/routes", routeRoutes);
 // checking
