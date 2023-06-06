@@ -50,6 +50,8 @@ async function updateBus(data, id) {
   }
 }
 
+
+
 module.exports = {
   createBus,
   getBus,

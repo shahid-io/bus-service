@@ -6,6 +6,10 @@ router.post("/", RouteController.createRoute);
 
 router.get("/", RouteController.getAllRoute);
 
-router.get("/:id", RouteController.getRouteById);
+router.get("/:routeId", RouteController.getRouteById);
+
+router.patch("/:routeId", RouteController.updateRoute);
+
+router.delete("/:routeId", RouteController.destroyRoute);
 
 module.exports = router;

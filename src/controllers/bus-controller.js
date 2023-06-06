@@ -5,6 +5,7 @@ async function createBus(req, res) {
   try {
     const bus = await BusService.createBus({
       busNumber: req.body.busNumber,
+      routeId: req.body.routeId,
       manufacturer: req.body.manufacturer,
       model: req.body.model,
       capacity: req.body.capacity,

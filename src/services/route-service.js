@@ -29,8 +29,28 @@ async function getRouteById(id) {
   }
 }
 
+async function destroyRoute(routeId) {
+  try {
+    const route = await routeRepository.destroyRoute(routeId);
+    return route;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function updateRoute(data, routeId) {
+  try {
+    const route = await routeRepository.updateRoute(data, routeId);
+    return route;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 module.exports = {
   createRoute,
   getRoute,
   getRouteById,
+  updateRoute,
+  destroyRoute,
 };

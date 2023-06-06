@@ -1,3 +1,5 @@
+const { sequelize } = require("../models");
+
 class CrudRepository {
   constructor(model) {
     this.model = model;
@@ -9,7 +11,7 @@ class CrudRepository {
     return response;
   }
 
-  async destroy(id) {
+  async destroy(id) { 
     const response = await this.model.destroy({
       where: {
         id: id,
@@ -27,7 +29,7 @@ class CrudRepository {
     const response = await this.model.findAll();
     return response;
   }
-  
+
   async update(data, id) {
     const response = await this.model.update(data, { where: { id: id } });
     return response;
