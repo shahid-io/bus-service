@@ -3,18 +3,19 @@ In terms of bus management, the REST API operations typically involve performing
 Retrieve Bus Information:
 # Manage Bus<br>
 GET /buses: Get a list of all buses.<br>
-GET /buses/{busId}: Get detailed information about a specific bus.
-Create, Update, and Delete Buses:
-POST /buses: Create a new bus.
-PUT /buses/{busId}: Update information about a specific bus.
-DELETE /buses/{busId}: Delete a specific bus.
+GET /buses/{busId}: Get detailed information about a specific bus.<br>
 
-# Manage Bus Routes:
-GET /routes: Get a list of all bus routes.
-GET /routes/{routeId}: Get detailed information about a specific route.
-POST /routes: Create a new bus route.
-PUT /routes/{routeId}: Update information about a specific route.
-DELETE /routes/{routeId}: Delete a specific route.
+# Create, Update, and Delete Buses:<br>
+POST /buses: Create a new bus.<br>
+PUT /buses/{busId}: Update information about a specific bus.<br>
+DELETE /buses/{busId}: Delete a specific bus.<br>
+
+# Manage Bus Routes:<br>
+GET /routes: Get a list of all bus routes.<br>
+GET /routes/{routeId}: Get detailed information about a specific route.<br>
+POST /routes: Create a new bus route.<br>
+PUT /routes/{routeId}: Update information about a specific route.<br>
+DELETE /routes/{routeId}: Delete a specific route.<br>
 
 # Manage Bus Stops:
 GET /stops: Get a list of all bus stops.
